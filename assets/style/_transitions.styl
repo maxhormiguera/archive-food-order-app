@@ -1,0 +1,28 @@
+// ::: transitions :::
+.layout-enter-active .layout-leave-active
+  transition opacity 0.8s
+.layout-enter, .layout-leave-to
+  opacity 0
+
+.page-enter-active, .page-leave-active
+  transition-delay opacity 0.6s
+.page-enter-active
+  transition margin 0.4s ease-out, opacity 0.4s ease
+.page-leave-active
+  transition margin 0.6s ease-in, opacity 0.4s ease
+
+.page-enter, .page-leave-to
+  margin-left -60px
+  opacity 0
+
+
+.modal-enter-active, .modal-leave-active
+  transition-delay opacity 0.4s
+.modal-enter-active
+  transition margin 0.4s ease-out, opacity 0.4s ease
+.modal-leave-active
+  transition margin 0.6s ease-out, opacity 0.4s ease
+
+.modal-enter, .modal-leave-to
+  margin-top -120px
+  opacity 0

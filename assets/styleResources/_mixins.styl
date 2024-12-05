@@ -1,0 +1,92 @@
+transform()
+  -webkit-transform arguments /* Safari & Chrome */
+  -moz-transform arguments /* Firefox */
+  transform arguments /* W3C */
+
+mask($url, $size = contain, $color = $color-text-main)
+  -webkit-mask url($url)
+  mask url($url)
+  -webkit-mask-size $size
+  mask-size $size
+  -webkit-mask-repeat no-repeat
+  mask-repeat no-repeat
+  background-color $color
+
+noselect()
+  -webkit-touch-callout none // iOS Safari
+  -webkit-user-select none // Safari
+  -khtml-user-select none // Konqueror HTML
+  -moz-user-select none // Old versions of Firefox
+  -ms-user-select none // Internet Explorer/Edge
+  user-select none // Non-prefixed version, currently supported by Chrome, Opera and Firefox
+
+position($position, $top = false, $right = null, $bottom = false, $left = false)
+  position $position
+  if ($top || $top is 0) and $top isnt false
+    top $top
+  if ($right || $right is 0) and $right isnt false
+    right $right
+  if ($bottom || $bottom is 0) and $bottom isnt false
+    bottom $bottom
+  if ($left || $left is 0) and $left isnt false
+    left $left
+
+width-height($w, $h = $w)
+  width $w
+  height $h
+
+media-screen($min = false, $max = false)
+  if $min && $max
+    @media only screen and (min-width : $min) and (max-width : $max - 1)
+      { block }
+  else if $min and !$max
+    @media only screen and (min-width : $min)
+      { block }
+  else if !$min and $max
+    @media only screen and (max-width : $max - 1)
+      { block }
+
+flexbox($align = false, $justify = false, $direction = false, $gap = false, $wrap = false,  $inline = false)
+  if $inline == true and $inline isnt false
+    display inline-flex
+  else
+    display flex
+  if $justify
+    justify-content $justify
+  if $align
+    align-items $align
+  if $direction
+    flex-direction $direction
+  if $wrap
+    flex-wrap $wrap
+  if $gap
+    gap $gap
+
+gradient-color()
+  $direction = shift(arguments)
+  background arguments[0][0]
+  background -webkit-linear-gradient(left, arguments)
+  background linear-gradient(to right, arguments)
+  if $direction == 'radial'
+    background -webkit-radial-gradient(center, ellipse cover, arguments)
+    background radial-gradient(ellipse at center, arguments);
+  else if $direction == 'vertical'
+    background -webkit-linear-gradient(top, arguments)
+    background linear-gradient(to bottom, arguments)
+  else if $direction == 'horizontal'
+    background -webkit-linear-gradient(left, arguments)
+    background linear-gradient(to right, arguments)
+  else if $direction == 'slash'
+    background linear-gradient(to bottom right, arguments)
+  else if $direction == 'backslash'
+    background linear-gradient(to bottom left, arguments)
+
+  // for transitioning gradients, use pseudo-elements and transition opacity
+
+background-image($url, $size = cover, $position = center, $repeat = no-repeat, $color = null)
+  background-image url($url)
+  background-size $size
+  background-position $position
+  background-repeat $repeat
+  if $color
+    background-color $color

@@ -1,0 +1,73 @@
+@import '_fonts'
+@import '_inputs'
+@import '_transitions'
+
+html
+body
+  min-width $breakpoint-xxxs
+  font-size 14px
+  font-family 'Elliot Sans', sans-serif
+  color $color-text-main
+  background-color $color-theme2
+
+main
+  width-height 100vw 100vh
+
+h1, h2, h3, h4, p
+  margin 0
+
+h1
+  3em
+  font-weight normal
+h2
+  2.75em/* 48/16 */
+h3
+  1.6875em/* 27/16 */
+h4
+  1.2rem/* 20/16 */
+
+ol, ul
+  list-style-type none
+  padding 0
+
+a
+  text-decoration none
+  color inherit
+  font-family inherit
+  &:visited
+    inherit
+
+.container, .half-container
+  margin auto
+  width-height 100% auto
+  border-radius $corner-rounding-lg $corner-rounding-lg 0 0
+  overflow hidden
+  padding 40px
+
+.container
+  max-width "calc(%s - 160px)" % $breakpoint-lg
+
+.half-container
+  max-width "calc(%s / 2)" % $breakpoint-lg
+
+.half-spill-container
+  position relative
+  &:first-child:not(:only-child) .__container
+    margin-left auto
+  .__container
+    max-width "calc(%s / 2)" % $breakpoint-lg
+
+.--glass, .--paper
+  position relative
+  overflow hidden
+  z-index 1
+  &::before
+    content ''
+    position absolute 0 0 0 0
+    width-height 100%
+    background-color $color-white
+    z-index -1
+
+.--glass::before
+  // backdrop-filter blur(15px) brightness(20%)
+  opacity 0.4

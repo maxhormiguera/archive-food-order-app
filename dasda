@@ -1,0 +1,67 @@
+[33m20f4586[m[33m ([m[1;36mHEAD -> [m[1;32mEren[m[33m)[m HEAD@{0}: commit: adjust API
+[33ma56b88d[m HEAD@{1}: reset: moving to a56b88d
+[33m890ac32[m[33m ([m[1;31morigin/Eren[m[33m)[m HEAD@{2}: reset: moving to HEAD
+[33m890ac32[m[33m ([m[1;31morigin/Eren[m[33m)[m HEAD@{3}: reset: moving to HEAD
+[33m890ac32[m[33m ([m[1;31morigin/Eren[m[33m)[m HEAD@{4}: reset: moving to HEAD
+[33m890ac32[m[33m ([m[1;31morigin/Eren[m[33m)[m HEAD@{5}: reset: moving to HEAD
+[33m890ac32[m[33m ([m[1;31morigin/Eren[m[33m)[m HEAD@{6}: reset: moving to HEAD
+[33m890ac32[m[33m ([m[1;31morigin/Eren[m[33m)[m HEAD@{7}: commit: small fixes
+[33mf2e7b04[m HEAD@{8}: commit (merge): Merge branch 'develop' of https://gitlab.com/MedVisionDev/listeat into Eren
+[33m11542d6[m HEAD@{9}: commit: small fixes
+[33m4dc7c3d[m HEAD@{10}: commit (merge): small fixes
+[33ma56b88d[m HEAD@{11}: commit: small fixes
+[33m25a9d52[m HEAD@{12}: commit (merge): Merge branch 'jerwin-listeat' of https://gitlab.com/MedVisionDev/listeat into Eren
+[33m1cfac55[m HEAD@{13}: commit: small fixes
+[33m2e30997[m HEAD@{14}: commit (merge): Merge branch 'develop' of https://gitlab.com/MedVisionDev/listeat into Eren
+[33m0495663[m HEAD@{15}: commit (merge): adjust APIs
+[33m72fdc4e[m HEAD@{16}: commit (merge): small fixes
+[33ma4f7c7a[m HEAD@{17}: commit: small fixes
+[33m51283c7[m HEAD@{18}: pull origin develop: Fast-forward
+[33m1ffec57[m HEAD@{19}: commit: small fixes
+[33m38b9e33[m HEAD@{20}: commit: small fixes
+[33me070252[m HEAD@{21}: pull origin develop: Merge made by the 'ort' strategy.
+[33m5b24d19[m HEAD@{22}: commit: Merge branch 'develop' of https://gitlab.com/MedVisionDev/listeat into Eren
+[33mdc19817[m HEAD@{23}: commit (merge): order history changes
+[33m318c9ff[m HEAD@{24}: commit (merge): small fixes
+[33mebf78ae[m HEAD@{25}: commit: Merge branches 'Eren' and 'develop' of https://gitlab.com/MedVisionDev/listeat into Eren
+[33mad9de85[m HEAD@{26}: commit: small fixes in users menu page
+[33m4c91671[m HEAD@{27}: commit: small fixes in users menu page
+[33m6df4a43[m HEAD@{28}: commit (merge): small fixes
+[33m79e69a4[m HEAD@{29}: commit: small fixes
+[33mb1779b9[m HEAD@{30}: commit: small fixes
+[33m4d11060[m HEAD@{31}: pull origin jerwin-listeat: Merge made by the 'ort' strategy.
+[33m22888ad[m HEAD@{32}: commit: small fixes
+[33md8711f3[m HEAD@{33}: pull origin develop: Fast-forward
+[33ma2a3dba[m HEAD@{34}: commit: small fix for user menu age
+[33meb0311a[m HEAD@{35}: commit: user menu page
+[33mbe0280d[m HEAD@{36}: pull origin jerwin-listeat: Merge made by the 'ort' strategy.
+[33m6aaeac9[m HEAD@{37}: commit: order detail table
+[33m0d1a624[m HEAD@{38}: pull origin develop: Fast-forward
+[33m601c851[m HEAD@{39}: commit: attempting meal summary in orders page
+[33mc7986fe[m HEAD@{40}: pull origin develop: Merge made by the 'ort' strategy.
+[33mf5cb35c[m HEAD@{41}: commit: orders page
+[33m7f94e96[m HEAD@{42}: commit: orders page fn attemp
+[33md435761[m HEAD@{43}: pull origin develop: Fast-forward
+[33m9141bbf[m HEAD@{44}: commit: meals edit fn
+[33mcb294f8[m HEAD@{45}: commit (merge): Merge branch 'jerwin-listeat' of https://gitlab.com/MedVisionDev/listeat into Eren
+[33mbf2f8e4[m HEAD@{46}: commit: meals edit function
+[33m5a37f67[m HEAD@{47}: pull origin develop: Fast-forward
+[33m2caa4ef[m HEAD@{48}: commit (merge): edit fns in meals page
+[33m03e4a94[m HEAD@{49}: commit: edit in meals page
+[33m7ef85b9[m HEAD@{50}: pull origin develop: Fast-forward
+[33mcb33e8f[m HEAD@{51}: commit: meals page small fix
+[33m527d1d1[m HEAD@{52}: pull origin jerwin-listeat: Merge made by the 'ort' strategy.
+[33m144683b[m HEAD@{53}: commit: small fix meals page
+[33ma9719a6[m HEAD@{54}: commit (merge): add modals
+[33m84fc626[m HEAD@{55}: commit: meals add
+[33mad41da9[m HEAD@{56}: pull origin develop: Fast-forward
+[33mc5d527e[m HEAD@{57}: commit: meals page
+[33m8de0e99[m HEAD@{58}: commit: orders page
+[33mf2ce161[m HEAD@{59}: pull origin develop: Fast-forward
+[33maa7b0cd[m HEAD@{60}: commit: add meals page
+[33md2e1b41[m HEAD@{61}: commit: add meal page
+[33m6465175[m HEAD@{62}: pull origin develop: Fast-forward
+[33m7745e72[m HEAD@{63}: checkout: moving from master to Eren
+[33macb6062[m[33m ([m[1;32mmaster[m[33m)[m HEAD@{64}: commit (merge): meals page
+[33ma894c5e[m HEAD@{65}: commit: try
+[33md05eb8b[m HEAD@{66}: clone: from https://gitlab.com/MedVisionDev/listeat.git

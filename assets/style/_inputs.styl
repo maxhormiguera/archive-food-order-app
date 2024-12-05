@@ -1,0 +1,218 @@
+// ::: these are stylus hashes to easily map properties of similarly styled elements
+$btn-themes = {
+  'accent1': {
+    direction: vertical
+    border: none
+    color1: $color-accent1 0%
+    color2: $color-accent2 100%
+    hovercolor1: $color-accent1 -25%
+    hovercolor2: $color-accent2 75%
+  }
+  'accent2': {
+    direction: vertical
+    border: none
+    color1: $color-accent2 50%
+    color2: $color-accent1 150%
+    hovercolor1: $color-accent1 -50%
+    hovercolor2: $color-accent2 50%
+  }
+  'accent3': {
+    direction: vertical
+    border: none
+    color1: $color-theme3 0%
+    color2: $color-theme4 50%
+    hovercolor1: $color-theme3 -25%
+    hovercolor2: $color-theme4 25%
+  },
+  'ghost1': {
+    ghost: true
+    border: 2px solid
+    color1: $color-accent1
+    color2: $color-text-alt
+  }
+  'ghost2': {
+    ghost: true
+    border: 2px solid
+    color1: $color-accent2
+    color2: $color-text-alt
+  }
+}
+
+// ::: standard buttons
+.btn
+  $base = @block {
+    height: 3.5rem/* 50/14 */
+    width: clamp(5rem, 12rem, 12rem)
+    padding: 0.25rem 2rem
+    border: 1px solid $color-text-alt
+    border-radius: $corner-rounding-md
+    background transparent
+    color: $color-text-alt
+    cursor pointer
+  }
+  $transition-speed = 0.2s
+
+  for $i, $theme in $btn-themes // ::: iteration over hash objects to lessen repetition
+    &-{$i} // ::: iteration for declaring multiple class selectors with their corresponding style rules (.btn-accent, .btn-ghost1)
+      {$base}
+      if ghost in $theme
+        border $theme.border $theme.color1
+        color $theme.color1
+        transition background-color $transition-speed, color $transition-speed, border-color $transition-speed, text-shadow $transition-speed // ::: specifically listed css rules to transition to avoid unexpected transitions
+      if direction in $theme
+        position relative
+        overflow hidden
+        border $theme.border
+        gradient-color $theme.direction, $theme.color1, $theme.color2
+        z-index 1
+        text-shadow 0 0 2px $color-text-main // ::: crisper-looking text
+
+    &-{$i}:hover
+      // ::: these &{vars for class} don't work under the conditionals
+      if ghost in $theme
+        background-color $theme.color1
+        color $theme.color2
+        text-shadow 0 0 2px $color-text-main
+
+    &-{$i}:after
+      // ::: transition doesn't support gradient fills yet, workaround with pseudo-element
+      if direction in $theme
+        content ''
+        display block
+        position absolute 0 0 0 0
+        opacity 0
+        gradient-color $theme.direction, $theme.hovercolor1, $theme.hovercolor2
+        transition opacity $transition-speed
+        z-index -1
+
+    &-{$i}:hover:after
+      if direction in $theme
+        opacity 1
+
+.ico-btn-edit
+  border-radius 20%
+  transition background-color 0.2s, box-shadow 0.2s
+  &:hover
+    box-shadow 0 0 4px rgba($color-accent1, 20%)
+    background-color rgba($color-accent1, 20%)
+  // &:hover:before
+  //   background-color $color-accent1
+  &:before
+    content ''
+    display block
+    mask '~/assets/images/edit.svg' contain
+    width-height 1.2rem
+    transition background-color 0.4s
+
+
+// ::: standard checkbox and radio
+.checkbox, .radio
+  flexbox($align: center, $gap: 0.5rem, $inline: true)
+  cursor pointer
+  &:hover .__box, &:hover .__circle
+    border-color $color-accent1
+    box-shadow 0 0 0.5rem rgba($color-accent1, 0.5)
+  &:focus .__box, &:focus .__circle
+    outline none
+    box-shadow 0 0 0.5rem $color-accent1
+  input[type='checkbox'], input[type='radio']
+    display none
+  .__box
+    width-height 1.125rem
+    flex 0 0 auto
+    border 1px solid $color-border-main
+    border-radius $corner-rounding-sm
+    background-color $color-white
+    transition border-color 0.4s, box-shadow 0.4s
+    &:before
+      content '\2714'
+      color transparent
+      font-size 1.3rem
+      font-weight bold
+      transition color 0.3s ease-out
+  .__circle
+    position relative -0.15rem
+    width-height 1.125rem
+    flexbox(center, center)
+    flex 0 0 auto
+    border 1px solid $color-border-main
+    border-radius 50%
+    background-color $color-white
+    transition border-color 0.4s, box-shadow 0.4s
+    &:before
+      content ''
+      display block
+      width-height 0
+      background-color $color-accent1
+      border-radius 50%
+      transition width 0.4s, height 0.4s
+  input[type='checkbox']:checked + .__box:before
+    display: block;
+    color $color-accent1
+    transition all 0.3s ease-in
+    text-shadow: 0 0 2px $color-white
+    transform: rotate(15deg) translateY(-10%);
+  input[type='radio']:checked + .__circle:before
+    width-height 0.75rem
+
+  .__label
+    line-height 1.25
+    vertical-align middle
+    white-space nowrap
+    noselect()
+
+
+// ::: standard input[type="text"], select
+// ::: i think the black outlines on google chrome are ugly
+input, select
+  color inherit
+  transition box-shadow 0.4s
+  &:not([disabled])
+    &:hover
+      box-shadow 0 0 0.5rem rgba($color-accent1, 0.5)
+    &:focus
+      outline none
+      box-shadow 0 0 0.5rem $color-accent1
+.input, .select select, .search-wrapper input[type='text']
+  line-height 1
+  border-radius $corner-rounding-md
+  padding 0.8rem
+  border none
+  background-color $color-white
+  &[disabled]
+    background-color rgba(@background-color, 0.6)
+
+.select
+  position relative
+  select
+    -webkit-appearance none
+    appearance none
+    width 100%
+    line-height 1.215 // to match height with input
+    padding-right 3rem
+    cursor pointer
+  &:before
+    content ""
+    position absolute 50% 1.2rem
+    width-height 0
+    border-left 0.25rem solid transparent
+    border-right 0.25rem solid transparent
+    border-top 0.5rem solid $color-border-main
+    display inline-block
+    transform translate(-50%, -70%)
+    transition border-top-color 0.4s
+  &:hover:before
+    border-top-color $color-text-main
+
+.search-wrapper
+  position relative
+  input[type='text']
+    padding-left 3rem
+    width 100%
+  &:before
+    content ''
+    display block
+    width-height 1.25rem
+    background-image '~/assets/images/search.svg' contain
+    transform translate(-50%, -55%)
+    position absolute 50% false false 1.5rem
